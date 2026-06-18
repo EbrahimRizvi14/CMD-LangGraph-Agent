@@ -1,5 +1,6 @@
 import subprocess
 import os
+from graph import app
 
 current_cwd = os.getcwd()
 
@@ -18,8 +19,8 @@ while True:
     
     elif command.startswith('ai '):
         prompt = command[3:].strip()
-        print(f'AI Prompt: {prompt}')
-        
+        result = app.invoke({"command": prompt})
+        print(f'AI Response: {result["response"]}')
 
     elif command.startswith('cd '):
         
