@@ -5,3 +5,4 @@ class AgentState(TypedDict):
     action: str
     response: str
     error: str
+    current_directory: str
